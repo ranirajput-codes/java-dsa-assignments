@@ -5,6 +5,9 @@ public class conditions_loops_4 {
     public static void main(String[] args) {
         factorial();
         electricityBill();
+        calculateAverage();
+        discountCalculation();
+
     }
 
 //    Factorial Program In Java
@@ -45,5 +48,38 @@ public class conditions_loops_4 {
         }
         System.out.println("Bill : " + bill);
     }
+
+//    calculate average of n numbers
+    static void calculateAverage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number of inputs: ");
+        int count = sc.nextInt();
+        int count2 = count;
+        int total = 0;
+        for(int i = count2; i > 0; i--){
+            System.out.print("Enter the number: ");
+            int num = sc.nextInt();
+            total = total+num;
+            count2--;
+        }
+        int average = total/count;
+        System.out.println("Average : " + average);
+    }
+
+//    Calculate Discount Of Product
+    static void discountCalculation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the price real price: ");
+        int realPrice = sc.nextInt();
+        System.out.print("Enter the discount percentage: ");
+        int discount = sc.nextInt();
+        int discountRupees = (realPrice*discount)/100;
+        System.out.println("You ara getting discount of rupees: " + discountRupees);
+        int afterPrice = realPrice-discountRupees;
+        System.out.println("Price after discount is: "+ afterPrice);
+    }
+
+//    Calculate Distance Between Two Points
+
 
 }
