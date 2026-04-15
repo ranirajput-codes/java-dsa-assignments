@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class conditions_loops_3 {
     public static void main(String[] args) {
-//        subOfProductAndSum();
-//        sumCalculator();
+        subOfProductAndSum();
+        sumCalculator();
         largestNumber();
     }
 
@@ -60,7 +60,7 @@ public class conditions_loops_3 {
             }
         }while(integer!=0);
 
-        System.out.println("The largest number is : " + largestNumber);
+        System.out.print("The largest number is : " + largestNumber);
     }
 
 }
