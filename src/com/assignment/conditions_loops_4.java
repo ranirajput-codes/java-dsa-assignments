@@ -7,7 +7,10 @@ public class conditions_loops_4 {
         electricityBill();
         calculateAverage();
         discountCalculation();
-
+        distanceCalculation();
+        commissionCalculation();
+        power();
+        depreciation();
     }
 
 //    Factorial Program In Java
@@ -80,6 +83,54 @@ public class conditions_loops_4 {
     }
 
 //    Calculate Distance Between Two Points
+    static void distanceCalculation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter X1: ");
+        int x1 = sc.nextInt();
+        System.out.print("Enter Y1: ");
+        int y1 = sc.nextInt();
+        System.out.print("Enter X2: ");
+        int x2 = sc.nextInt();
+        System.out.print("Enter Y2: ");
+        int y2 = sc.nextInt();
+        double distance = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+        System.out.println("The distance is: " + distance);
+    }
 
+//    Calculate Commission Percentage
+    static void commissionCalculation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total amount of sales: ");
+        int amount = sc.nextInt();
+        System.out.print("Enter commission percentage: ");
+        int commissionRate = sc.nextInt();
+        int commission = (commissionRate/100)*amount;
+        System.out.println("Commission is: "+commission);
+    }
+
+//    power in java
+    static void power(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the base: ");
+        int base = sc.nextInt();
+        System.out.print("Enter the power: ");
+        int power = sc.nextInt();
+        double ans = Math.pow(base,power);
+        System.out.println("The answer is: " + ans);
+    }
+
+//    Calculate Depreciation of Value
+    static void depreciation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter depreciation percentage: ");
+        int rate = sc.nextInt();
+        System.out.println("Enter initial value: ");
+        int initialV = sc.nextInt();
+        System.out.println("Enter time in years: ");
+        int time = sc.nextInt();
+        double depreciation = initialV*Math.pow((1-(rate/100.0)),time);
+        System.out.println("The final value after depreciation is: "+ depreciation);
+
+    }
 
 }
