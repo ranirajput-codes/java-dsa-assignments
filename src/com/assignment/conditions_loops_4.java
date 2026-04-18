@@ -11,6 +11,8 @@ public class conditions_loops_4 {
         commissionCalculation();
         power();
         depreciation();
+        battingAverage();
+        CGPACalculation();
     }
 
 //    Factorial Program In Java
@@ -130,7 +132,52 @@ public class conditions_loops_4 {
         int time = sc.nextInt();
         double depreciation = initialV*Math.pow((1-(rate/100.0)),time);
         System.out.println("The final value after depreciation is: "+ depreciation);
-
     }
 
+//    calculate the batting average
+    static void battingAverage(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter total runs: ");
+        int run = sc.nextInt();
+        System.out.println("Enter number of innings: ");
+        int innings = sc.nextInt();
+        System.out.println("Enter number of not outs: ");
+        int notOuts = sc.nextInt();
+        int outs = innings-notOuts;
+        int battingAverage = run/outs;
+        System.out.println("Batting average is: " + battingAverage);
+    }
+
+//    Calculate CGPA Java Program
+    static void CGPACalculation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number of subjects: ");
+        int numOfSub = sc.nextInt();
+
+        System.out.print("Enter the credits for each subject : ");
+        int credit1 = sc.nextInt();
+        int credit2 = sc.nextInt();
+        int credit3 = sc.nextInt();
+        int credit4 = sc.nextInt();
+        int credit5 = sc.nextInt();
+        int totalCredit = credit1+credit2+credit3+credit4+credit5;
+
+        System.out.print("Enter the Grade point for each subject: ");
+        int gp1 = sc.nextInt();
+        int gp2 = sc.nextInt();
+        int gp3 = sc.nextInt();
+        int gp4 = sc.nextInt();
+        int gp5 = sc.nextInt();
+
+        int m1 = credit1*gp1;
+        int m2 = credit2*gp2;
+        int m3 = credit3*gp3;
+        int m4 = credit4*gp4;
+        int m5 = credit5*gp5;
+        int totalWeighted = m1+m2+m3+m4+m5;
+
+        int CGPA =totalWeighted/totalCredit;
+        System.out.println("CGPA : " + CGPA);
+
+    }
 }
