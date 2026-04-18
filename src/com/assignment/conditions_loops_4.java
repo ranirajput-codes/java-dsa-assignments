@@ -151,8 +151,6 @@ public class conditions_loops_4 {
 //    Calculate CGPA Java Program
     static void CGPACalculation(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Number of subjects: ");
-        int numOfSub = sc.nextInt();
 
         System.out.print("Enter the credits for each subject : ");
         int credit1 = sc.nextInt();
