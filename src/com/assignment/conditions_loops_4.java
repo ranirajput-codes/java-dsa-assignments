@@ -13,6 +13,9 @@ public class conditions_loops_4 {
         depreciation();
         battingAverage();
         CGPACalculation();
+        compoundInterest();
+        sumOfN();
+        armstrongNumber();
     }
 
 //    Factorial Program In Java
@@ -176,6 +179,60 @@ public class conditions_loops_4 {
 
         int CGPA =totalWeighted/totalCredit;
         System.out.println("CGPA : " + CGPA);
+    }
 
+//    calculate compound interest
+    static void compoundInterest(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter principal amount: ");
+        int p = sc.nextInt();
+        System.out.println("Enter interest rate: ");
+        int r = sc.nextInt();
+        System.out.println("Enter time in years: ");
+        int t = sc.nextInt();
+        double finalAmount = p*Math.pow(1+(r/100.0),t);
+        double cm = finalAmount- p;
+        System.out.println("Compound interest is: " + cm);
+    }
+
+//    sum of n numbers
+    static void sumOfN(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of values you want to sum: ");
+        int totalNum = sc.nextInt();
+        int sum = 0;
+        while(totalNum>0){
+            System.out.println("Enter the value: ");
+            int value = sc.nextInt();
+            sum = sum + value;
+            totalNum--;
+        }
+        System.out.println("The Sum is: " + sum);
+    }
+
+//    armstrong numbers
+    static void armstrongNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num = sc.nextInt();
+        int numCopy = num;
+        int Num = num;
+        int digit = 0;
+        while(numCopy>0){
+            numCopy = numCopy/10;
+            digit++;
+        }
+        int sum = 0;
+        for(int i = 1; i<=digit; i++){
+            int r = num%10;
+            int add = (int)Math.pow(r,digit);
+            num = num/10;
+            sum = sum+add;
+        }
+        if(Num==sum){
+            System.out.println("This is an armstrong number!");
+        }else{
+            System.out.println("No it is not an armstrong number!");
+        }
     }
 }
