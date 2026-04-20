@@ -16,6 +16,8 @@ public class conditions_loops_4 {
         compoundInterest();
         sumOfN();
         armstrongNumber();
+        nCrnPr();
+        reverseString();
     }
 
 //    Factorial Program In Java
@@ -235,4 +237,48 @@ public class conditions_loops_4 {
             System.out.println("No it is not an armstrong number!");
         }
     }
+
+//    calculate nCr and nPr
+    static void nCrnPr(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter n (total items): ");
+        int n = sc.nextInt();
+        System.out.println("Enter r (selected items): ");
+        int r = sc.nextInt();
+
+        //n!
+        int factN = 1;
+        for(int i = n; i>0 ; i--){
+            factN = factN*i;
+        }
+        //r!
+        int factR = 1;
+        for(int i = r; i>0 ; i--){
+            factR = factR*i;
+        }
+        //(n-r)!
+        int factNR= 1;
+        int NR = n-r;
+        for(int i = NR; i>0 ; i--){
+            factNR = factNR*i;
+        }
+        //ans
+        int nCr = factN/(factR*factNR);
+        int nPr = factN/factNR;
+        System.out.println("nCr is: " + nCr);
+        System.out.println("nPr is: "  + nPr);
+    }
+
+//    reverse string in java
+    static void reverseString(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String string = sc.next();
+        char[] arr = string.toCharArray();
+        for(int i = string.length()-1; i>=0; i++ ){
+            int reverse = string.charAt(i);
+        }
+
+    }
+
 }
