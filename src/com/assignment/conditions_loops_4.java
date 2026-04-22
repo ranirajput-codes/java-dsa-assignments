@@ -18,6 +18,7 @@ public class conditions_loops_4 {
         armstrongNumber();
         nCrnPr();
         reverseString();
+        palindromeNumber();
     }
 
 //    Factorial Program In Java
@@ -274,11 +275,32 @@ public class conditions_loops_4 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string: ");
         String string = sc.next();
-        char[] arr = string.toCharArray();
-        for(int i = string.length()-1; i>=0; i++ ){
-            int reverse = string.charAt(i);
+        String ans = "";
+        for(int i = string.length()-1; i>=0; i--){
+            char reverse = string.charAt(i);
+            ans = ans + reverse;
         }
+        System.out.println("The reverse of the string is:\n" + ans );
+    }
 
+//    find if a number is palindrome or not
+    static void palindromeNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int num = sc.nextInt();
+        int numCopy = num;
+        int newNum = 0;
+        while(numCopy>0){
+            int lastDigit = numCopy%10;
+            numCopy =numCopy/10;
+            newNum = (newNum*10)+lastDigit;
+        }
+        System.out.println(newNum);
+        if(newNum==num){
+            System.out.println("Yes this is a palindrome number! ");
+        }else{
+            System.out.println("No this is not a palindrome number!");
+        }
     }
 
 }
