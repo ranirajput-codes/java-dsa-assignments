@@ -6,9 +6,11 @@ public class conditions_loops_5 {
         futureInvestment();
         HCF();
         LCM();
+        checkAlphabet();
+        perfectNumber();
     }
 
-//    future investment value
+//    future investment value - using compound interest formula
     static void futureInvestment(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter principle amount: ");
@@ -64,4 +66,43 @@ public class conditions_loops_5 {
         }
         System.out.println("LCM of these two numbers is: "+ ans);
     }
+
+//    program to check whether the alphabet is vowel or consonant
+    static void checkAlphabet(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the alphabet: ");
+        char ch = sc.next().toLowerCase().charAt(0);
+        if(ch<'a'||ch>'z'){
+            System.out.println("Invalid Input!");
+            return;
+        }
+        char [] vowels = {'a','e','i','o','u'};
+        String ans = "consonant";
+        for(char check : vowels){
+            if(ch==check) {
+                ans = "vowel";
+                break;
+            }
+        }
+        System.out.println("It's a "+ ans);
+
+    }
+
+//    Perfect Number In Java
+    static void perfectNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num = sc.nextInt();
+        int sum = 0;
+        for(int i = 1; i< num ; i++){
+            if(num%i==0)
+                sum = sum+i;
+        }
+        if(sum==num){
+            System.out.println("It is a perfect number!");
+        }else{
+            System.out.println("No it is not a perfect number!");
+        }
+    }
+
 }
