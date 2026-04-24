@@ -70,7 +70,7 @@ public class conditions_loops_5 {
 //    program to check whether the alphabet is vowel or consonant
     static void checkAlphabet(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the alphabet: ");
+        System.out.print("Enter the alphabet: ");
         char ch = sc.next().toLowerCase().charAt(0);
         if(ch<'a'||ch>'z'){
             System.out.println("Invalid Input!");
