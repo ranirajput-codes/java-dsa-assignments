@@ -8,7 +8,12 @@ public class conditions_loops_5 {
         LCM();
         checkAlphabet();
         perfectNumber();
+        leapYear();
+        sumOfDigits();
+        daysCount();
+        detectNumbers();
     }
+
 
 //    future investment value - using compound interest formula
     static void futureInvestment(){
@@ -104,5 +109,71 @@ public class conditions_loops_5 {
             System.out.println("No it is not a perfect number!");
         }
     }
+
+//    check leap year or not
+    static void leapYear(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the year: ");
+        int year = sc.nextInt();
+        if(year%4==0){
+            System.out.println("Leap Year!");
+        }else{
+            System.out.println("Not a leap year!");
+        }
+    }
+
+//    Sum Of A Digits Of Number
+    static void sumOfDigits(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num = sc.nextInt();
+        int sum = 0;
+        int lastDigit;
+        while(num>0){
+            lastDigit = num%10;
+            sum = sum+lastDigit;
+            num = num/10;
+        }
+        System.out.println("Sum of the digits is: "+sum);
+
+    }
+
+//   Kunal is allowed to go out with his friends only on the even days of a given month. Write a program to count the number of days he can go out in the month of August.
+    static void daysCount(){
+        System.out.println("The month is february");
+        int count = 0;
+        // it has 28 days
+        for(int i= 1; i<=28; i++){
+            if(i%2==0){
+                count++;
+            }
+        }
+        System.out.println("the count of days he can go out is: " + count);
+    }
+
+//    Write a program to print the sum of negative numbers, sum of positive even numbers and the sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when the user enters a zero.
+    static void  detectNumbers(){
+        Scanner sc = new Scanner(System.in);
+        int num;
+        int sumOfNv = 0;
+        int sumOfPvEven = 0;
+        int sumOfPvOdd = 0;
+        do{
+            System.out.print("Enter the number: ");
+            num = sc.nextInt();
+
+            if(num<0){
+                sumOfNv = sumOfNv+num;
+            } else if(num%2==0) {
+                sumOfPvEven = sumOfPvEven + num;
+            }else {
+                sumOfPvOdd = sumOfPvOdd + num;
+            }
+        }while(num!=0);
+        System.out.println("Sum of Negetive numbers is: " + sumOfNv);
+        System.out.println("Sum of Positive even numbers is: "+ sumOfPvEven);
+        System.out.println("Sum of Positive odd numbers is :"+ sumOfPvOdd);
+    }
+
 
 }
